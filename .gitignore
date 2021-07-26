@@ -1,0 +1,13 @@
+# pas de fichiers document .pdf .docx .doc .txt .md
+*.pdf
+*.txt
+*.docx
+*.doc
+*.md
+
+
+# pas de fichiers généré par sass
+
+*.css.map
+*.scss
+
