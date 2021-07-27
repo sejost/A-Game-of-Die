@@ -8,15 +8,39 @@
     <link rel="stylesheet" href="styles.css">
     <title>A game of Die</title>
 </head>
+
 <body>
     <div class="content">
         <p>Quand on joue au jeu des dés, soit on gagne, soit on meurt.</p>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis quibusdam ipsum, 
             sint aliquid reiciendis hic ut vero enim dignissimos dolore labore voluptatem aperiam. 
             Quam debitis quos quaerat optio, fugiat dolorum.</p>
+
+        <div id='player1'> Joueur 1 - Tour n°<span id='player1Turn'></span>
+            <p>Compte : <span id='cntRound1'></span></p>
+            <p>Global : <span id='cntGame1'></span></p>
+        </div>
+
+        <br>
+        
+        <div>
+            <button id='playerBtn'>Ajouter un joueur</button>
+            <button id='resetBtn'>Réinitialiser</button>
+            <button id='diceBtn'>LE Dé !</button>
+            <button id='holdBtn'>Hold</button>
+            <p>Résultat du dé : <span id='diceResult'></span></p>
+        </div>
+
+        <br>
+        
+        <div id='player2'> Joueur 2 - Tour n°<span id='player2Turn'></span>
+            <p>Compte : <span id='cntRound2'></span></P>
+            <p>Global : <span id='cntGame2'></span></p>
+        </div>
+
     </div>
     
-
 <script src="script.js"></script>
 </body>
+
 </html>
