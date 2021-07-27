@@ -12,9 +12,17 @@
 <body>
     <div class="content">
 
-        <div id='player1'> Joueur 1 - Tour n°<span id='player1Turn'></span>
-            <p>Compte : <span id='cntRound1'></span></p>
-            <p>Global : <span id='cntGame1'></span></p>
+        <div class="player-panel" id='player1'>
+            <div class="playerId"> Player 1 - Turn <span id='player1Turn'></span>
+            </div>
+
+            <div class="countGame" id='cntGame1'></div>
+
+            <div class="countRound">
+                <p>Current</p>
+                <p id='cntRound1'>0</p>
+            </div>
+
         </div>
 
         <br>
@@ -31,9 +39,17 @@
 
         <br>
         
-        <div id='player2'> Joueur 2 - Tour n°<span id='player2Turn'></span>
-            <p>Compte : <span id='cntRound2'></span></P>
-            <p>Global : <span id='cntGame2'></span></p>
+        <div class="player-panel" id='player2'>
+            <div class="playerId"> Player 2 - Turn <span id='player2Turn'></span>
+            </div>
+
+            <div class="countGame" id='cntGame2'></div>
+
+            <div class="countRound">
+                <p>Current</p>
+                <p id='cntRound2'></p>
+            </div>
+
         </div>
 
     </div>

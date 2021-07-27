@@ -5,12 +5,6 @@ $col-white: #ffffff;
 $col-lucid:#21252900;
 $col-semilucid:#505152a4;
 
-@mixin div-players {
-  width: 40%;
-  height: 80vh;
-  padding-top: 50px;
-  
-}
 
 body {
   text-align: center;
@@ -25,9 +19,26 @@ body {
   margin-top: 3%;
 }
 
+.player-panel{
+  width: 40%;
+  height: 80vh;
+  padding-top: 50px;
+  display: flex;
+  flex-direction: column;
+	flex-wrap: wrap;
+  justify-content: space-between;
+	align-items: center;
+	align-content: stretch;
+  .countRound{
+    border-radius: 8px 8px;
+    background: rgb(17, 17, 43);
+    margin-bottom: 20px;
+    width: 100px;
+  }
+}
+
 #player1 {
   background : $col-gray;
-  @include div-players();
   border-top-left-radius: 12px 12px;
   border-bottom-left-radius: 12px 12px;
 }
@@ -36,7 +47,6 @@ body {
   background :$col-semilucid;
   border-top-right-radius: 12px 12px;
   border-bottom-right-radius: 12px 12px;
-  @include div-players()
 }
 
 #tools{

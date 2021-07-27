@@ -8,6 +8,6 @@
 
 # pas de fichiers généré par sass
 
-*.css.map
+*.map
 *.svg
 
