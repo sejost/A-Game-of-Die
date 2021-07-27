@@ -9,5 +9,5 @@
 # pas de fichiers généré par sass
 
 *.css.map
-*.scss
+*.svg
 

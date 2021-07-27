@@ -1,5 +1,44 @@
 body {
   text-align: center;
-  background-color: #283149;
+  background-color: #252627;
+  color: #ffffff;
+}
+
+.content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 3%;
+}
+
+#player1 {
+  background: #434b53;
+  width: 40%;
+  height: 80vh;
+  padding-top: 50px;
+  border-top-left-radius: 12px 12px;
+  border-bottom-left-radius: 12px 12px;
+}
+
+#player2 {
+  background: #505152a4;
+  border-top-right-radius: 12px 12px;
+  border-bottom-right-radius: 12px 12px;
+  width: 40%;
+  height: 80vh;
+  padding-top: 50px;
+}
+
+#tools {
+  background: transparent;
+  position: absolute;
+  top: 50px;
+  margin-top: 3%;
 }
 /*# sourceMappingURL=styles.css.map */
