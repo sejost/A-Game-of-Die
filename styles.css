@@ -15,13 +15,12 @@ body {
       -ms-flex-align: center;
           align-items: center;
   margin-top: 3%;
-  font-size: 20px;
+  font-size: 30px;
 }
 
 .player-panel {
   width: 40%;
   height: 80vh;
-  padding-top: 50px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -36,10 +35,11 @@ body {
           align-items: center;
   -ms-flex-line-pack: stretch;
       align-content: stretch;
+  padding-top: 50px;
 }
 
 .player-panel .playerTag {
-  margin-top: 15%;
+  margin-top: 10%;
 }
 
 .player-panel .countGame {
@@ -47,19 +47,22 @@ body {
 }
 
 .player-panel .countRound {
-  margin-top: 20%;
+  margin-top: 30%;
   border-radius: 8px 8px;
   background: #11112b;
-  width: 100px;
+  width: 200px;
 }
 
 #player1 {
   background: #434b53;
   border-top-left-radius: 12px 12px;
   border-bottom-left-radius: 12px 12px;
+  border-top-right-radius: 12px 12px;
+  border-bottom-right-radius: 12px 12px;
 }
 
 #player2 {
+  display: none;
   background: #505152a4;
   border-top-right-radius: 12px 12px;
   border-bottom-right-radius: 12px 12px;
@@ -69,6 +72,37 @@ body {
   background: transparent;
   position: absolute;
   top: 50px;
-  margin-top: 3%;
+  height: 80vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-line-pack: stretch;
+      align-content: stretch;
+  padding-top: 50px;
+}
+
+#tools .dice {
+  margin-top: 120%;
+  background: #ffffff;
+  width: 100px;
+  height: 100px;
+  border-radius: 12px 12px;
+}
+
+#tools .hold {
+  margin-top: 230%;
+}
+
+#tools .victoryMessage {
+  font-size: 100px;
 }
 /*# sourceMappingURL=styles.css.map */

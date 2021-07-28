@@ -4,11 +4,22 @@ $col-gray: #434b53;
 $col-white: #ffffff;
 $col-lucid:#21252900;
 $col-semilucid:#505152a4;
+$col-darkBlue : rgb(17, 17, 43);
 
+$fontSize-veryLarge : 100px;
 $fontSize-Large : 40px;
 $fontSize-Medium : 30px;
 $fontSize-Small : 20px;
 
+@mixin flexPanels{
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+	flex-wrap: wrap;
+	align-items: center;
+	align-content: stretch;
+  padding-top: 50px;
+}
 
 
 body {
@@ -22,29 +33,24 @@ body {
   justify-content: center;
   align-items : center;
   margin-top: 3%;
-  font-size: $fontSize-Small;
+  font-size: $fontSize-Medium;
 }
 
 .player-panel{
   width: 40%;
-  height: 80vh;
-  padding-top: 50px;
-  display: flex;
-  flex-direction: column;
-	flex-wrap: wrap;
-	align-items: center;
-	align-content: stretch;
+  @include flexPanels();
+  
   .playerTag{
-    margin-top: 15%;
+    margin-top: 10%;
   }
   .countGame{
     margin-top: 3%;
   }
   .countRound{
-    margin-top: 20%;
+    margin-top: 30%;
     border-radius: 8px 8px;
-    background: rgb(17, 17, 43);
-    width: 100px;
+    background: $col-darkBlue;
+    width: 200px;
   }
 }
 
@@ -52,9 +58,13 @@ body {
   background : $col-gray;
   border-top-left-radius: 12px 12px;
   border-bottom-left-radius: 12px 12px;
+  border-top-right-radius: 12px 12px;
+  border-bottom-right-radius: 12px 12px;
+  
 }
   
 #player2{
+  display: none;
   background :$col-semilucid;
   border-top-right-radius: 12px 12px;
   border-bottom-right-radius: 12px 12px;
@@ -64,8 +74,20 @@ body {
   background: transparent;
   position: absolute;
   top: 50px;
-  margin-top: 3%;
-
+  @include flexPanels();
+  .dice{
+    margin-top : 120%;
+    background: $col-white;
+    width: 100px;
+    height: 100px;
+    border-radius: 12px 12px;
+  }
+  .hold{
+    margin-top : 230%;
+  }
+  .victoryMessage{
+    font-size: $fontSize-veryLarge;
+  }
 }
 
 
