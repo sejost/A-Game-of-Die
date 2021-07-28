@@ -15,6 +15,7 @@ body {
       -ms-flex-align: center;
           align-items: center;
   margin-top: 3%;
+  font-size: 20px;
 }
 
 .player-panel {
@@ -30,9 +31,6 @@ body {
           flex-direction: column;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -40,10 +38,18 @@ body {
       align-content: stretch;
 }
 
+.player-panel .playerTag {
+  margin-top: 15%;
+}
+
+.player-panel .countGame {
+  margin-top: 3%;
+}
+
 .player-panel .countRound {
+  margin-top: 20%;
   border-radius: 8px 8px;
   background: #11112b;
-  margin-bottom: 20px;
   width: 100px;
 }
 

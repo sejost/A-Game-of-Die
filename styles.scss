@@ -5,6 +5,11 @@ $col-white: #ffffff;
 $col-lucid:#21252900;
 $col-semilucid:#505152a4;
 
+$fontSize-Large : 40px;
+$fontSize-Medium : 30px;
+$fontSize-Small : 20px;
+
+
 
 body {
   text-align: center;
@@ -17,6 +22,7 @@ body {
   justify-content: center;
   align-items : center;
   margin-top: 3%;
+  font-size: $fontSize-Small;
 }
 
 .player-panel{
@@ -26,13 +32,18 @@ body {
   display: flex;
   flex-direction: column;
 	flex-wrap: wrap;
-  justify-content: space-between;
 	align-items: center;
 	align-content: stretch;
+  .playerTag{
+    margin-top: 15%;
+  }
+  .countGame{
+    margin-top: 3%;
+  }
   .countRound{
+    margin-top: 20%;
     border-radius: 8px 8px;
     background: rgb(17, 17, 43);
-    margin-bottom: 20px;
     width: 100px;
   }
 }
