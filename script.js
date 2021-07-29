@@ -26,8 +26,6 @@ gameCounter2.innerHTML = 0
 player1Turn.innerHTML = 1
 player2Turn.innerHTML = 1
 
-player2Div.style.display = 'none'
-
 function addPlayer(){
     playerCounter = 2
     player2Div.style.display = 'block'
@@ -40,6 +38,7 @@ function addPlayer(){
     diceResult.innerHTML = 0
     playerButton.disabled = true
     playerButton.removeEventListener('click', addPlayer)
+    
 }
 
 playerButton.addEventListener('click', addPlayer)
