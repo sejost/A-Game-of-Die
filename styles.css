@@ -1,7 +1,14 @@
 body {
   text-align: center;
-  background-color: #252627;
+  text-shadow: -2px 3px 3px rgba(111, 111, 111, 0.55);
   color: #ffffff;
+  font-family: "Lato", sans-serif;
+  background-image: url("https://images.pexels.com/photos/3005772/pexels-photo-3005772.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  max-width: 100%;
 }
 
 .content {
@@ -49,23 +56,50 @@ body {
 .player-panel .countRound {
   margin-top: 30%;
   border-radius: 8px 8px;
-  background: #11112b;
   width: 200px;
 }
 
 #player1 {
-  background: #434b53;
-  border-top-left-radius: 12px 12px;
-  border-bottom-left-radius: 12px 12px;
-  border-top-right-radius: 12px 12px;
-  border-bottom-right-radius: 12px 12px;
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+          backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(17, 25, 40, 0.75);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.125);
+}
+
+#player1 #player1:hover {
+  background-color: rgba(52, 77, 124, 0.75);
+}
+
+#player1 .countRound {
+  background: #11112b;
 }
 
 #player2 {
   display: none;
-  background: #505152a4;
-  border-top-right-radius: 12px 12px;
-  border-bottom-right-radius: 12px 12px;
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+          backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(71, 37, 37, 0.527);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.125);
+}
+
+#player2 .countRound {
+  background: #2b1111;
+}
+
+@-webkit-keyframes rotate {
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate {
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
 }
 
 #tools {
@@ -96,6 +130,15 @@ body {
   width: 100px;
   height: 100px;
   border-radius: 12px 12px;
+}
+
+#tools .diceButton {
+  margin-top: 20%;
+}
+
+#tools .diceButton:hover {
+  -webkit-animation: rotate 2s ease-in-out 0s 1 normal;
+          animation: rotate 2s ease-in-out 0s 1 normal;
 }
 
 #tools .hold {

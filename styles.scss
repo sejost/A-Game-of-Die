@@ -5,6 +5,7 @@ $col-white: #ffffff;
 $col-lucid:#21252900;
 $col-semilucid:#505152a4;
 $col-darkBlue : rgb(17, 17, 43);
+$col-darkRed : rgb(43, 17, 17);
 
 $fontSize-veryLarge : 100px;
 $fontSize-Large : 40px;
@@ -21,11 +22,17 @@ $fontSize-Small : 20px;
   padding-top: 50px;
 }
 
-
 body {
   text-align: center;
-  background-color: $col-darkgray;
+  text-shadow: -2px 3px 3px rgba(111,111,111,0.55);
   color: $col-white;
+  font-family: "Lato", sans-serif;
+  background-image: url('https://images.pexels.com/photos/3005772/pexels-photo-3005772.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260');
+  background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-attachment: fixed;
+    max-width: 100%;
   }
 
 .content{
@@ -40,6 +47,7 @@ body {
   width: 40%;
   @include flexPanels();
   
+  
   .playerTag{
     margin-top: 10%;
   }
@@ -49,26 +57,37 @@ body {
   .countRound{
     margin-top: 30%;
     border-radius: 8px 8px;
-    background: $col-darkBlue;
     width: 200px;
   }
 }
 
 #player1 {
-  background : $col-gray;
-  border-top-left-radius: 12px 12px;
-  border-bottom-left-radius: 12px 12px;
-  border-top-right-radius: 12px 12px;
-  border-bottom-right-radius: 12px 12px;
-  
+  backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(17, 25, 40, 0.75);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.125);
+  #player1:hover{
+    background-color: rgba(52, 77, 124, 0.75);
+  }
+  .countRound{
+    background: $col-darkBlue;
+  }
 }
   
 #player2{
   display: none;
-  background :$col-semilucid;
-  border-top-right-radius: 12px 12px;
-  border-bottom-right-radius: 12px 12px;
+  backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(71, 37, 37, 0.527);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.125);
+  .countRound{
+    background: $col-darkRed;
+  }
 }
+
+@keyframes rotate {
+  100%{ transform: rotate(360deg); }
+  }
 
 #tools{
   background: transparent;
@@ -81,6 +100,12 @@ body {
     width: 100px;
     height: 100px;
     border-radius: 12px 12px;
+  }
+  .diceButton{
+    margin-top: 20%;
+  }
+  .diceButton:hover{
+    animation:rotate 2s ease-in-out 0s 1 normal;
   }
   .hold{
     margin-top : 230%;

@@ -6,7 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" href="styles.css">
-    <title>A game of Die</title>
+    <link rel="stylesheet" href="https://fonts.google.com/specimen/Lato">
+    <script src="https://kit.fontawesome.com/b089fe9b6c.js" crossorigin="anonymous"></script>
+    
+    <title>A GAME OF DIE</title>
 </head>
 
 <body>
@@ -14,13 +17,13 @@
     <div class="content">
 
         <div class="player-panel" id='player1'>
-            <div class="playerTag"> Player 1 - Turn <span id='player1Turn'></span>
+            <div class="playerTag"> PLAYER 1 - TURN <span id='player1Turn'></span>
             </div>
 
             <div class="countGame" id='cntGame1'>0</div>
 
             <div class="countRound">
-                <p>Current</p>
+                <p>CURRENT</p>
                 <p id='cntRound1'>0</p>
             </div>
 
@@ -30,27 +33,29 @@
         
         <div id="tools">
             <div class="victoryMessage"></div>
-            <div class="newPlayer"><button id='playerBtn'>Ajouter un joueur</button></div>
-            <div class="reinitialise"><button id='resetBtn'>New Game</button></div>
+            <div class="newPlayer"><i id="playerBtn" alt="Add player 2" class="fas fa-user-plus"></i></div>
+            <div class="reinitialise"><button id='resetBtn'>NEW GAME</button></div>
             <div class="dice">
                 <p><span id='diceResult'></span></p>
             </div>
+
             <div class="diceButton">
-                <button id='diceBtn'>Roll dice</button>
+                <i width="200px" id="diceBtn" class="fas fa-dice"></i>
             </div>
-            <div class="hold"><button id='holdBtn'>Hold</button></div>  
+
+            <div class="hold"><button id='holdBtn'>HOLD</button></div>  
         </div>
 
         <br>
         
         <div class="player-panel" id='player2'>
-            <div class="playerTag"> Player 2 - Turn <span id='player2Turn'></span>
+            <div class="playerTag"> PLAYER 2 - TURN <span id='player2Turn'></span>
             </div>
 
             <div class="countGame" id='cntGame2'>0</div>
 
             <div class="countRound">
-                <p>Current</p>
+                <p>CURRENT</p>
                 <p id='cntRound2'>0</p>
             </div>
 
@@ -59,6 +64,7 @@
     </div>
     
 <script src="script.js"></script>
+
 </body>
 
 </html>
