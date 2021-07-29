@@ -72,8 +72,8 @@ body {
 #player1:hover {
   -webkit-transform: scale(1.008);
           transform: scale(1.008);
-  -webkit-transition: all 0.5s ease-out 0.1s;
-  transition: all 0.5s ease-out 0.1s;
+  -webkit-transition: all 0.5s ease-in-out 0.2s;
+  transition: all 0.5s ease-in-out 0.2s;
 }
 
 #player2 {
@@ -89,8 +89,8 @@ body {
 #player2:hover {
   -webkit-transform: scale(1.008);
           transform: scale(1.008);
-  -webkit-transition: all 0.5s ease-out 0.1s;
-  transition: all 0.5s ease-out 0.1s;
+  -webkit-transition: all 0.5s ease-in-out 0.2s;
+  transition: all 0.5s ease-in-out 0.2s;
 }
 
 @-webkit-keyframes rotate {
@@ -131,26 +131,31 @@ body {
       align-content: stretch;
 }
 
-#tools .newPlayer:hover {
+#tools .newPlayer {
   border-radius: 12px;
+}
+
+#tools .newPlayer:hover {
+  padding: 2px;
   border: solid 1px;
-  -webkit-transform: scale(1.2);
-          transform: scale(1.2);
-  -webkit-transition: all 0.5s ease-out 0.1s;
-  transition: all 0.5s ease-out 0.1s;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-transition: all 0.5s ease-in-out 0.2s;
+  transition: all 0.5s ease-in-out 0.2s;
 }
 
 #tools .reinitialise {
   margin-top: 7%;
+  border-radius: 12px;
 }
 
 #tools .reinitialise:hover {
-  border-radius: 12px;
+  padding: 2px;
   border: solid 1px;
-  -webkit-transform: scale(1.2);
-          transform: scale(1.2);
-  -webkit-transition: all 0.5s ease-out 0.1s;
-  transition: all 0.5s ease-out 0.1s;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-transition: all 0.5s ease-in-out 0.2s;
+  transition: all 0.5s ease-in-out 0.2s;
 }
 
 #tools .dice {
@@ -163,33 +168,35 @@ body {
 
 #tools .diceButton {
   margin-top: 15%;
+  border-radius: 12px;
 }
 
 #tools .diceButton:hover {
-  border-radius: 12px;
+  padding: 2px;
   border: solid 1px;
-  -webkit-transform: scale(1.2);
-          transform: scale(1.2);
-  -webkit-transition: all 0.5s ease-out 0.1s;
-  transition: all 0.5s ease-out 0.1s;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-transition: all 0.5s ease-in-out 0.2s;
+  transition: all 0.5s ease-in-out 0.2s;
 }
 
-#tools .diceButton:hover #diceBtn {
+#tools .diceButton:hover i {
   -webkit-animation: rotate 2s ease-in-out 0s 1 normal;
           animation: rotate 2s ease-in-out 0s 1 normal;
 }
 
 #tools .hold {
   margin-top: 140%;
+  border-radius: 12px;
 }
 
 #tools .hold:hover {
-  border-radius: 12px;
+  padding: 2px;
   border: solid 1px;
-  -webkit-transform: scale(1.2);
-          transform: scale(1.2);
-  -webkit-transition: all 0.5s ease-out 0.1s;
-  transition: all 0.5s ease-out 0.1s;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-transition: all 0.5s ease-in-out 0.2s;
+  transition: all 0.5s ease-in-out 0.2s;
 }
 
 #tools .victoryMessage {

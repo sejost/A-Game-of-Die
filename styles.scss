@@ -25,13 +25,13 @@ $fontSize-Small : 23px;
 }
 
 @mixin transition1 {
-  transition: all 0.5s ease-out 0.1s;
+  transition: all 0.5s ease-in-out 0.2s;
 }
 
 @mixin transformEffect {
-  border-radius: 12px;
+  padding: 2px;
   border: solid 1px;
-  transform: scale(1.2);
+  transform: scale(1.1);
   @include transition1();
 }
 
@@ -79,6 +79,7 @@ body {
   background-color: $col-blueLucid;
   border-radius: 12px;
   border: 1px solid $col-semilucid;
+  
   .countRound{
     background: $col-darkBlue;
   }
@@ -116,11 +117,15 @@ body {
   position: absolute;
   top: 50px;
   @include flexPanels();
+  .newPlayer{
+    border-radius: 12px;
+  }
   .newPlayer:hover{
     @include transformEffect();
   }
   .reinitialise{
     margin-top : 7%;
+    border-radius: 12px;
   }
   .reinitialise:hover{
     @include transformEffect();
@@ -135,15 +140,17 @@ body {
   }
   .diceButton{
     margin-top: 15%;
+    border-radius: 12px;
   }
   .diceButton:hover{
     @include transformEffect();
-    #diceBtn{
+    i{
     animation:rotate 2s ease-in-out 0s 1 normal;
     }
   }
   .hold{
     margin-top : 140%;
+    border-radius: 12px;
   }
   .hold:hover{
     @include transformEffect();
