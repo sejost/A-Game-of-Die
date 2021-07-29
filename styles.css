@@ -60,32 +60,37 @@ body {
 }
 
 #player1 {
-  -webkit-backdrop-filter: blur(16px) saturate(180%);
-          backdrop-filter: blur(16px) saturate(180%);
   background-color: rgba(17, 25, 40, 0.75);
   border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.125);
-}
-
-#player1 #player1:hover {
-  background-color: rgba(52, 77, 124, 0.75);
+  border: 1px solid #505152a4;
 }
 
 #player1 .countRound {
   background: #11112b;
 }
 
+#player1:hover {
+  -webkit-transform: scale(1.008);
+          transform: scale(1.008);
+  -webkit-transition: all 0.5s ease-out 0.1s;
+  transition: all 0.5s ease-out 0.1s;
+}
+
 #player2 {
-  display: none;
-  -webkit-backdrop-filter: blur(16px) saturate(180%);
-          backdrop-filter: blur(16px) saturate(180%);
-  background-color: rgba(71, 37, 37, 0.527);
+  background-color: rgba(40, 17, 17, 0.75);
   border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.125);
+  border: 1px solid #505152a4;
 }
 
 #player2 .countRound {
   background: #2b1111;
+}
+
+#player2:hover {
+  -webkit-transform: scale(1.008);
+          transform: scale(1.008);
+  -webkit-transition: all 0.5s ease-out 0.1s;
+  transition: all 0.5s ease-out 0.1s;
 }
 
 @-webkit-keyframes rotate {
@@ -103,6 +108,9 @@ body {
 }
 
 #tools {
+  font-size: 23px;
+  padding-top: 25px;
+  z-index: 1;
   background: transparent;
   position: absolute;
   top: 50px;
@@ -121,11 +129,32 @@ body {
           align-items: center;
   -ms-flex-line-pack: stretch;
       align-content: stretch;
-  padding-top: 50px;
+}
+
+#tools .newPlayer:hover {
+  border-radius: 12px;
+  border: solid 1px;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  -webkit-transition: all 0.5s ease-out 0.1s;
+  transition: all 0.5s ease-out 0.1s;
+}
+
+#tools .reinitialise {
+  margin-top: 7%;
+}
+
+#tools .reinitialise:hover {
+  border-radius: 12px;
+  border: solid 1px;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  -webkit-transition: all 0.5s ease-out 0.1s;
+  transition: all 0.5s ease-out 0.1s;
 }
 
 #tools .dice {
-  margin-top: 120%;
+  margin-top: 90%;
   background: #ffffff;
   width: 100px;
   height: 100px;
@@ -133,16 +162,34 @@ body {
 }
 
 #tools .diceButton {
-  margin-top: 20%;
+  margin-top: 15%;
 }
 
 #tools .diceButton:hover {
+  border-radius: 12px;
+  border: solid 1px;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  -webkit-transition: all 0.5s ease-out 0.1s;
+  transition: all 0.5s ease-out 0.1s;
+}
+
+#tools .diceButton:hover #diceBtn {
   -webkit-animation: rotate 2s ease-in-out 0s 1 normal;
           animation: rotate 2s ease-in-out 0s 1 normal;
 }
 
 #tools .hold {
-  margin-top: 230%;
+  margin-top: 140%;
+}
+
+#tools .hold:hover {
+  border-radius: 12px;
+  border: solid 1px;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  -webkit-transition: all 0.5s ease-out 0.1s;
+  transition: all 0.5s ease-out 0.1s;
 }
 
 #tools .victoryMessage {
