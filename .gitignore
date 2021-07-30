@@ -9,3 +9,6 @@
 # pas de fichiers généré par sass
 
 *.map
+
+#ignoré le dossier images
+/images
