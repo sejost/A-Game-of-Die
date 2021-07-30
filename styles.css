@@ -79,7 +79,8 @@ body {
 #player2 {
   display: none;
   background-color: rgba(40, 17, 17, 0.75);
-  border-radius: 12px;
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
   border: 1px solid #505152a4;
 }
 
@@ -143,6 +144,7 @@ body {
           transform: scale(1.1);
   -webkit-transition: all 0.5s ease-in-out 0.2s;
   transition: all 0.5s ease-in-out 0.2s;
+  cursor: pointer;
 }
 
 #tools .reinitialise {
@@ -157,6 +159,7 @@ body {
           transform: scale(1.1);
   -webkit-transition: all 0.5s ease-in-out 0.2s;
   transition: all 0.5s ease-in-out 0.2s;
+  cursor: pointer;
 }
 
 #tools .dice {
@@ -179,6 +182,7 @@ body {
           transform: scale(1.1);
   -webkit-transition: all 0.5s ease-in-out 0.2s;
   transition: all 0.5s ease-in-out 0.2s;
+  cursor: pointer;
 }
 
 #tools .diceButton:hover i {
@@ -198,6 +202,7 @@ body {
           transform: scale(1.1);
   -webkit-transition: all 0.5s ease-in-out 0.2s;
   transition: all 0.5s ease-in-out 0.2s;
+  cursor: pointer;
 }
 
 #tools .victoryMessage {

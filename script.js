@@ -39,8 +39,9 @@ function addPlayer(){
     diceResult.innerHTML = 0
     playerButton.disabled = true
     playerButton.removeEventListener('click', addPlayer)
-    playerButton.style.color = "black"
-    
+    playerButton.style.color = "#ffffff00"
+    player1Div.style.borderTopRightRadius = "0"
+    player1Div.style.borderBottomRightRadius = "0"
     
 }
 
@@ -147,9 +148,12 @@ resetButton.addEventListener('click', () => {
         gameCounter2.innerHTML = 0
         player1Turn.innerHTML = 1
         player2Turn.innerHTML = 1
+        playerButton.disabled = false
         player2Div.style.display = 'none'
         playerButton.addEventListener('click', addPlayer)
-        
+        playerButton.style.color = "white"
+        player1Div.style.borderTopRightRadius = "12px"
+        player1Div.style.borderBottomRightRadius = "12px"        
          break;
 
      case 2:

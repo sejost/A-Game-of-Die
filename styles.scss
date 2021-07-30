@@ -2,7 +2,7 @@ $col-dark: #212529 ;
 $col-darkgray:#252627 ;
 $col-gray: #434b53;
 $col-white: #ffffff;
-$col-lucid:#21252900;
+$col-lucid:#ffffff00;
 $col-semilucid:#505152a4;
 $col-darkBlue : rgb(17, 17, 43);
 $col-blueLucid: rgba(17, 25, 40, 0.75);
@@ -33,6 +33,10 @@ $fontSize-Small : 23px;
   border: solid 1px;
   transform: scale(1.1);
   @include transition1();
+}
+
+@mixin cursorChange{
+  cursor: pointer;
 }
 
 body {
@@ -93,7 +97,8 @@ body {
 #player2{
   display: none;
   background-color: $col-redLucid;
-  border-radius: 12px;
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
   border: 1px solid $col-semilucid;
   .countRound{
     background: $col-darkRed;
@@ -122,6 +127,7 @@ body {
   }
   .newPlayer:hover{
     @include transformEffect();
+    @include cursorChange();
   }
   .reinitialise{
     margin-top : 7%;
@@ -129,6 +135,8 @@ body {
   }
   .reinitialise:hover{
     @include transformEffect();
+    @include cursorChange();
+    
   }
   
   .dice{
@@ -144,6 +152,7 @@ body {
   }
   .diceButton:hover{
     @include transformEffect();
+    @include cursorChange();
     i{
     animation:rotate 2s ease-in-out 0s 1 normal;
     }
@@ -154,6 +163,7 @@ body {
   }
   .hold:hover{
     @include transformEffect();
+    @include cursorChange();
   }
   .victoryMessage{
     font-size: $fontSize-veryLarge;
