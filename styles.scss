@@ -114,6 +114,15 @@ body {
   100%{ transform: rotate(360deg); }
   }
 
+img{
+  background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-attachment: fixed;
+    max-width: 105%;
+    max-height: 105%;
+}
+
 #tools{
   font-size: $fontSize-Small;
   padding-top: 25px;

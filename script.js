@@ -17,6 +17,16 @@ const gameCounter2 = document.querySelector('#cntGame2')
 const player1Turn = document.querySelector('#player1Turn')
 const player2Turn = document.querySelector('#player2Turn')
 
+const c = document.querySelector('#myCanvas')
+const ctx = c.getContext('2d')
+ctx.fillStyle = 'red'
+
+const dice1 = document.querySelector('#dice1Img')
+const dice2 = document.querySelector('#dice2Img')
+const dice3 = document.querySelector('#dice3Img')
+const dice4 = document.querySelector('#dice4Img')
+const dice5 = document.querySelector('#dice5Img')
+const dice6 = document.querySelector('#dice6Img')
 
 let playerCounter = 1
 
@@ -26,6 +36,8 @@ gameCounter1.innerHTML = 0
 gameCounter2.innerHTML = 0
 player1Turn.innerHTML = 1
 player2Turn.innerHTML = 1
+
+
 
 function addPlayer(){
     playerCounter = 2
@@ -47,11 +59,38 @@ function addPlayer(){
 
 playerButton.addEventListener('click', addPlayer)
 
+resetButton.addEventListener('click', () => {
+    const reponsePrompt = prompt('Choisissez le nombre de joueur, 1 ou 2')
+    switch (parseFloat(reponsePrompt)) {
+        case 1:
+           playerCounter = 1
+           roundCounter1.innerHTML = 0
+           roundCounter2.innerHTML = 0
+           gameCounter1.innerHTML = 0
+           gameCounter2.innerHTML = 0
+           player1Turn.innerHTML = 1
+           player2Turn.innerHTML = 1
+           playerButton.disabled = false
+           player2Div.style.display = 'none'
+           playerButton.addEventListener('click', addPlayer)
+           playerButton.style.color = "white"
+           player1Div.style.borderTopRightRadius = "12px"
+           player1Div.style.borderBottomRightRadius = "12px"        
+            break
+   
+        case 2:
+           addPlayer()
+            break
+   
+        default: prompt(`${reponsePrompt} : n'est pas une réponse correct, Veuillez indiquer si vous souhaiter joueur à un [1] ou deux [2] joueurs `)
+            break
+    }
+   })
+   
 
 const randomNb = () => {
 	return Math.floor(Math.random() * 6 )+1
 }
-
 
 
 function ply1AddCount(){
@@ -87,6 +126,123 @@ function ply2LostTurn(){
 
 diceButton.addEventListener('click', () => {
     diceResult.innerHTML = randomNb()
+    console.log(diceResult.innerHTML)
+    ctx.clearRect(0, 0, c.width, c.height)
+
+
+
+
+    switch (parseFloat(diceResult.innerHTML)) {
+        case 1:
+            if (c.getContext) {
+               ctx.beginPath()
+                //centre milieu
+                ctx.arc(50, 50, 5, 0, 2 * Math.PI, false)
+                ctx.fill()
+              } else {
+              }
+            break
+
+        case 2:
+            ctx.beginPath()
+            //en haut à gauche
+            ctx.arc(25, 25, 5, 0, 2 * Math.PI, false)
+            ctx.fill()
+            // en bas à droite
+            ctx.moveTo(75,75)
+            ctx.arc(75, 75, 5, 0, 2 * Math.PI, false)
+            ctx.fill()
+            break
+
+        case 3:
+            ctx.beginPath()
+            //en haut à gauche            
+            ctx.arc(25, 25, 5, 0, 2 * Math.PI, false)
+            ctx.fill()
+            //centre milieu
+            ctx.moveTo(50,50)
+            ctx.arc(50, 50, 5, 0, 2 * Math.PI, false)
+            ctx.fill()
+            //en bas à droite
+            ctx.moveTo(75,75)
+            ctx.arc(75, 75, 5, 0, 2 * Math.PI, false)
+            ctx.fill()
+            break
+
+        case 4:
+            ctx.beginPath()
+            //en haut à gauche
+            ctx.arc(25, 25, 5, 0, 2 * Math.PI, false)
+            ctx.fill()
+            //en bas à gauche
+            ctx.moveTo(25,75)
+            ctx.arc(25, 75, 5, 0, 2 * Math.PI, false)
+            ctx.fill()
+            //En bas à droite
+            ctx.moveTo(75,75)
+            ctx.arc(75, 75, 5, 0, 2 * Math.PI, false)
+            ctx.fill()
+            //En haut à droite
+            ctx.moveTo(75,25)
+            ctx.arc(75, 25, 5, 0, 2 * Math.PI, false)
+            ctx.fill()
+            break
+
+        case 5:
+            ctx.beginPath()
+            ctx.fillStyle = 'red'
+            //au milieu centre
+            ctx.arc(50, 50, 5, 0, 2 * Math.PI, false)
+            ctx.fill()
+            //en haut à gauche
+            ctx.moveTo(25,25)
+            ctx.arc(25, 25, 5, 0, 2 * Math.PI, false)
+            ctx.fill()
+            //en bas à gauche
+            ctx.moveTo(25,75)
+            ctx.arc(25, 75, 5, 0, 2 * Math.PI, false)
+            ctx.fill()
+            //En bas à droite
+            ctx.moveTo(75,75)
+            ctx.arc(75, 75, 5, 0, 2 * Math.PI, false)
+            ctx.fill()
+            //En haut à droite
+            ctx.moveTo(75,25)
+            ctx.arc(75, 25, 5, 0, 2 * Math.PI, false)
+            ctx.fill()
+            break
+
+        case 6:
+            ctx.beginPath()
+            ctx.fillStyle = 'red'
+            //en haut à gauche
+            ctx.arc(25, 25, 5, 0, 2 * Math.PI, false)
+            ctx.fill()
+            //milieu à gauche
+            ctx.moveTo(25,75)
+            ctx.arc(25, 50, 5, 0, 2 * Math.PI, false)
+            ctx.fill()
+            //en bas à gauche
+            ctx.moveTo(25,75)
+            ctx.arc(25, 75, 5, 0, 2 * Math.PI, false)
+            ctx.fill()
+            //En bas à droite
+            ctx.moveTo(75,75)
+            ctx.arc(75, 75, 5, 0, 2 * Math.PI, false)
+            ctx.fill()
+            //milieu à gauche
+            ctx.moveTo(25,75)
+            ctx.arc(75, 50, 5, 0, 2 * Math.PI, false)
+            ctx.fill()
+            //En haut à droite
+            ctx.moveTo(75,25)
+            ctx.arc(75, 25, 5, 0, 2 * Math.PI, false)
+            ctx.fill()
+            break
+    
+        default:
+            break
+    }
 
     if (playerCounter == 1){
         ply1AddCount()
@@ -116,59 +272,23 @@ holdButton.addEventListener('click', () => {
     if(playerCounter == 1){
         ply1AddGame()
         if(gameCounter1.innerHTML >= 100){
-            alert(`Bravo ! Tu as gagné en ${player1Turn.innerHTML} tours`)
+            alert(`Well done ! You won within ${player1Turn.innerHTML} round`)
         }
     }
     else{
         if(player1Turn.innerHTML == player2Turn.innerHTML){
             ply1AddGame()
             if(gameCounter1.innerHTML >= 100){
-                alert(`Bravo Joueur 1 ! Tu as gagné en ${player1Turn.innerHTML} tours`)
+                alert(`Well done Player 1 ! You won in ${player1Turn.innerHTML} round`)
             }
         }
         else {
             ply2AddGame() 
             if(gameCounter2.innerHTML >= 100){
-                alert(`Bravo Joueur 2 ! Tu as gagné en ${player2Turn.innerHTML} tours`)
+                alert(`Well done Player 2 ! You won in ${player2Turn.innerHTML} round`)
             }
         }
 
     }
 
 })
-
-resetButton.addEventListener('click', () => {
- const reponsePrompt = prompt('Choisissez le nombre de joueur, 1 ou 2')
- switch (parseFloat(reponsePrompt)) {
-     case 1:
-        playerCounter = 1
-        roundCounter1.innerHTML = 0
-        roundCounter2.innerHTML = 0
-        gameCounter1.innerHTML = 0
-        gameCounter2.innerHTML = 0
-        player1Turn.innerHTML = 1
-        player2Turn.innerHTML = 1
-        playerButton.disabled = false
-        player2Div.style.display = 'none'
-        playerButton.addEventListener('click', addPlayer)
-        playerButton.style.color = "white"
-        player1Div.style.borderTopRightRadius = "12px"
-        player1Div.style.borderBottomRightRadius = "12px"        
-         break;
-
-     case 2:
-        addPlayer()
-         break;
-
-     default: prompt(`${reponsePrompt} : n'est pas une réponse correct, Veuillez indiquer si vous souhaiter joueur à un [1] ou deux [2] joueurs `)
-         break;
- }
-})
-
-
-var c = document.getElementById("myCanvas");
-var ctx = c.getContext("2d");
-ctx.beginPath();
-ctx.arc(25, 25, 80, 0, 2 * Math.PI);
-ctx.fillStyle = 'red';
-
