@@ -17,6 +17,7 @@ const gameCounter2 = document.querySelector('#cntGame2')
 const player1Turn = document.querySelector('#player1Turn')
 const player2Turn = document.querySelector('#player2Turn')
 
+
 let playerCounter = 1
 
 roundCounter1.innerHTML = 0
@@ -28,7 +29,7 @@ player2Turn.innerHTML = 1
 
 function addPlayer(){
     playerCounter = 2
-    player2Div.style.display = 'block'
+    player2Div.style.display = 'flex'
     roundCounter1.innerHTML = 0
     roundCounter2.innerHTML = 0
     gameCounter1.innerHTML = 0
@@ -38,6 +39,8 @@ function addPlayer(){
     diceResult.innerHTML = 0
     playerButton.disabled = true
     playerButton.removeEventListener('click', addPlayer)
+    playerButton.style.color = "black"
+    
     
 }
 
@@ -159,5 +162,9 @@ resetButton.addEventListener('click', () => {
 })
 
 
-
+var c = document.getElementById("myCanvas");
+var ctx = c.getContext("2d");
+ctx.beginPath();
+ctx.arc(25, 25, 80, 0, 2 * Math.PI);
+ctx.fillStyle = 'red';
 
