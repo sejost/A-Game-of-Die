@@ -6,8 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://fonts.google.com/specimen/Lato">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <script src="https://kit.fontawesome.com/b089fe9b6c.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     
     <title>A GAME OF DIE</title>
 </head>
@@ -40,13 +41,15 @@
                 <i  class="fas fa-play-circle"></i> <span>NEW GAME</span>
             </div>
             <div class="dice">
-                <img id="dice1Img" style="display: none;" src="images/dice1.png">
-                <img id="dice2Img" style="display: none;" src="images/dice2.png">
-                <img id="dice3Img" style="display: none;" src="images/dice3.png">
-                <img id="dice4Img"style="display: none;" src="images/dice4.png">
-                <img id="dice5Img" style="display: none;" src="images/dice5.png">
-                <img id="dice6Img" style="display: none;" src="images/dice6.png">
-                <canvas id="myCanvas"></canvas>
+                <canvas id="myCanvas">
+                    
+                    <!-- <img id="dice1Img" style="display: none;" src="images/dice1.png">
+                    <img id="dice2Img" style="display: none;" src="images/dice2.png">
+                    <img id="dice3Img" style="display: none;" src="images/dice3.png">
+                    <img id="dice4Img"style="display: none;" src="images/dice4.png">
+                    <img id="dice5Img" style="display: none;" src="images/dice5.png">
+                    <img id="dice6Img" style="display: none;" src="images/dice6.png"> -->
+                </canvas>
                 <p><span style="display: none;" id='diceResult'></span></p>
             </div>
 

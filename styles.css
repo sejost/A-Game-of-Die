@@ -1,8 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap");
 body {
   text-align: center;
   text-shadow: -2px 3px 3px rgba(111, 111, 111, 0.55);
   color: #ffffff;
-  font-family: "Lato", sans-serif;
+  font-family: 'Lato';
   background-image: url("https://images.pexels.com/photos/3005772/pexels-photo-3005772.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260");
   background-position: center center;
   background-repeat: no-repeat;

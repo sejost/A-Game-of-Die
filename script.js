@@ -1,11 +1,3 @@
-const player1Div = document.querySelector('#player1')
-const player2Div = document.querySelector('#player2')
-
-const diceButton = document.querySelector('#diceBtn')
-const holdButton = document.querySelector('#holdBtn')
-const playerButton = document.querySelector('#playerBtn')
-const resetButton = document.querySelector('#resetBtn')
-
 const diceResult = document.querySelector('#diceResult')
 
 const roundCounter1 = document.querySelector('#cntRound1')
@@ -21,71 +13,95 @@ const c = document.querySelector('#myCanvas')
 const ctx = c.getContext('2d')
 ctx.fillStyle = 'red'
 
-const dice1 = document.querySelector('#dice1Img')
+/*const dice1 = document.querySelector('#dice1Img')
 const dice2 = document.querySelector('#dice2Img')
 const dice3 = document.querySelector('#dice3Img')
 const dice4 = document.querySelector('#dice4Img')
 const dice5 = document.querySelector('#dice5Img')
 const dice6 = document.querySelector('#dice6Img')
+*/
 
 let playerCounter = 1
 
-roundCounter1.innerHTML = 0
-roundCounter2.innerHTML = 0
-gameCounter1.innerHTML = 0
-gameCounter2.innerHTML = 0
-player1Turn.innerHTML = 1
-player2Turn.innerHTML = 1
+$('#cntRound1').html('0')
+$('#cntRound2').html('0')
+$('#cntGame1').html('0')
+$('#cntGame2').html('0')
+$('#player1Turn').html('1')
+$('#player2Turn').html('1')
 
 
+$('#playerBtn').click(addPlayer)
 
-function addPlayer(){
-    playerCounter = 2
-    player2Div.style.display = 'flex'
-    roundCounter1.innerHTML = 0
-    roundCounter2.innerHTML = 0
-    gameCounter1.innerHTML = 0
-    gameCounter2.innerHTML = 0
-    player1Turn.innerHTML = 1
-    player2Turn.innerHTML = 1
-    diceResult.innerHTML = 0
-    playerButton.disabled = true
-    playerButton.removeEventListener('click', addPlayer)
-    playerButton.style.color = "#ffffff00"
-    player1Div.style.borderTopRightRadius = "0"
-    player1Div.style.borderBottomRightRadius = "0"
-    
-}
-
-playerButton.addEventListener('click', addPlayer)
-
-resetButton.addEventListener('click', () => {
-    const reponsePrompt = prompt('Choisissez le nombre de joueur, 1 ou 2')
+$('#resetBtn').click( () => {
+    const reponsePrompt = prompt('Choose the number of player wanted, 1 or 2')
     switch (parseFloat(reponsePrompt)) {
         case 1:
            playerCounter = 1
-           roundCounter1.innerHTML = 0
-           roundCounter2.innerHTML = 0
-           gameCounter1.innerHTML = 0
-           gameCounter2.innerHTML = 0
-           player1Turn.innerHTML = 1
-           player2Turn.innerHTML = 1
-           playerButton.disabled = false
-           player2Div.style.display = 'none'
-           playerButton.addEventListener('click', addPlayer)
-           playerButton.style.color = "white"
-           player1Div.style.borderTopRightRadius = "12px"
-           player1Div.style.borderBottomRightRadius = "12px"        
+           $('#player2').css('display', 'none')
+           $('#cntRound1').html('0')
+           $('#cntRound2').html('0')
+           $('#cntGame1').html('0')
+           $('#cntGame2').html('0')
+           $('#player1Turn').html('1')
+           $('#player2Turn').html('1')
+           $('#diceResult').html('0')
+           $('#playerBtn').css('disabled', 'false')
+           $('#playerBtn').click(addPlayer)
+           $('#playerBtn').css('color', 'white')
+           $('#player1').css("border-top-right-radius", "12px")
+           $('#player1').css("border-bottom-right-radius", "12px")       
             break
    
         case 2:
            addPlayer()
             break
    
-        default: prompt(`${reponsePrompt} : n'est pas une réponse correct, Veuillez indiquer si vous souhaiter joueur à un [1] ou deux [2] joueurs `)
+        default: prompt(`${reponsePrompt} : is not a correct answer. Please indicate if you want to playe solo [1] or with someone [2]`)
             break
     }
+
+    changingBackground()
+
    })
+
+   function addPlayer(){
+    playerCounter = 2
+    $('#player2').css('display','flex')
+    $('#cntRound1').html('0')
+    $('#cntRound2').html('0')
+    $('#cntGame1').html('0')
+    $('#cntGame2').html('0')
+    $('#player1Turn').html('1')
+    $('#player2Turn').html('1')
+    $('#diceResult').html('0')
+    $('#playerBtn').css('disabled', 'true')
+    $('#playerBtn').unbind()
+    $('#playerBtn').css('color', '#ffffff00')
+    $('#player1').css("border-top-right-radius", "0");
+    $('#player1').css("border-bottom-right-radius", "0")
+    changingBackground()
+}
+
+function changingBackground(){
+    if (playerCounter == 2){
+        if ($('#player1Turn').html() == $('#player2Turn').html())
+        {
+            $('#player1').css('background-color', 'rgba(20, 50, 160, 0.75)')
+            $('#player2').css('background-color', 'rgba(40, 17, 17, 0.75)')
+
+        }
+        else{
+            $('#player1').css('background-color', 'rgba(17, 25, 40, 0.75)')
+            $('#player2').css('background-color', 'rgba(151, 33, 33, 0.75')
+
+        }
+    }
+    else{
+        $('#player1').css('background-color', 'rgba(17, 25, 40, 0.75)')
+    }
+
+}
    
 
 const randomNb = () => {
@@ -94,7 +110,8 @@ const randomNb = () => {
 
 
 function ply1AddCount(){
-    roundCounter1.innerHTML = parseFloat(diceResult.innerHTML) + parseFloat(roundCounter1.innerHTML)
+    roundCounter1.innerText = parseFloat(diceResult.innerText) + parseFloat(roundCounter1.innerText)
+
 }
 
 function ply1AddGame(){
@@ -124,13 +141,11 @@ function ply2LostTurn(){
 }
 
 
-diceButton.addEventListener('click', () => {
+$('#diceBtn').click(() => {
     diceResult.innerHTML = randomNb()
+
     console.log(diceResult.innerHTML)
     ctx.clearRect(0, 0, c.width, c.height)
-
-
-
 
     switch (parseFloat(diceResult.innerHTML)) {
         case 1:
@@ -266,29 +281,45 @@ diceButton.addEventListener('click', () => {
         }
     }
 
+    changingBackground()
+
 })
 
-holdButton.addEventListener('click', () => {
+$('#holdBtn').click(() => {
     if(playerCounter == 1){
         ply1AddGame()
         if(gameCounter1.innerHTML >= 100){
-            alert(`Well done ! You won within ${player1Turn.innerHTML} round`)
+            alert(`Well done ! You won within ${player1Turn.innerHTML} rounds`)
+            $('#playerBtn').unbind()
+            $('#diceBtn').unbind()
+            $('#holdBtn').unbind()
         }
     }
     else{
         if(player1Turn.innerHTML == player2Turn.innerHTML){
             ply1AddGame()
-            if(gameCounter1.innerHTML >= 100){
-                alert(`Well done Player 1 ! You won in ${player1Turn.innerHTML} round`)
+            if($('#cntGame1').html() >= 100){
+                //gameCounter1.innerHTML >= 100){
+                alert(`Well done Player 1 ! You won in ${player1Turn.innerHTML} rounds`)
+                $('#playerBtn').unbind()
+                $('#diceBtn').unbind()
+                $('#holdBtn').unbind()
             }
         }
         else {
             ply2AddGame() 
-            if(gameCounter2.innerHTML >= 100){
-                alert(`Well done Player 2 ! You won in ${player2Turn.innerHTML} round`)
+            if($('#cntGame2').html() >= 100){
+            //if(gameCounter2.innerHTML >= 100){
+                alert(`Well done Player 2 ! You won in ${player2Turn.innerHTML} rounds`)
+                $('#playerBtn').unbind()
+                $('#diceBtn').unbind()
+                $('#holdBtn').unbind()
+
             }
         }
 
     }
+
+    changingBackground()
 
 })
