@@ -15,8 +15,10 @@
 
 <body>
     
+    <!-- Contenu global -->
     <div class="content">
 
+        <!-- Panneau du joueur 1 / Par défaut -->
         <div class="player-panel" id='player1'>
             <div class="playerTag"> PLAYER 1 <span style="display: none;" id='player1Turn'></span>
             </div>
@@ -32,8 +34,9 @@
 
         <br>
         
+        <!-- Panneau des outils, imbriquer au milieu -->
         <div id="tools">
-            <div class="victoryMessage"></div>
+            <!-- <div class="victoryMessage"></div> -->
             <div class="newPlayer" id="playerBtn">
                 <i class="fas fa-user-plus"></i> <span>ADD PLAYER 2</span>
             </div>
@@ -41,15 +44,7 @@
                 <i  class="fas fa-play-circle"></i> <span>NEW GAME</span>
             </div>
             <div class="dice">
-                <canvas id="myCanvas">
-                    
-                    <!-- <img id="dice1Img" style="display: none;" src="images/dice1.png">
-                    <img id="dice2Img" style="display: none;" src="images/dice2.png">
-                    <img id="dice3Img" style="display: none;" src="images/dice3.png">
-                    <img id="dice4Img"style="display: none;" src="images/dice4.png">
-                    <img id="dice5Img" style="display: none;" src="images/dice5.png">
-                    <img id="dice6Img" style="display: none;" src="images/dice6.png"> -->
-                </canvas>
+                <canvas id="myCanvas"> </canvas>
                 <p><span style="display: none;" id='diceResult'></span></p>
             </div>
 

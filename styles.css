@@ -22,13 +22,13 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-top: 3%;
   font-size: 30px;
 }
 
 .player-panel {
   width: 40%;
-  height: 80vh;
+  margin-top: 2.5%;
+  height: 85vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -55,7 +55,7 @@ body {
 }
 
 .player-panel .countRound {
-  margin-top: 30%;
+  margin-top: 40%;
   border-radius: 8px 8px;
   width: 200px;
 }
@@ -110,23 +110,13 @@ body {
   }
 }
 
-img {
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-  max-width: 105%;
-  max-height: 105%;
-}
-
 #tools {
   font-size: 23px;
-  padding-top: 25px;
   z-index: 1;
   background: transparent;
   position: absolute;
-  top: 50px;
-  height: 80vh;
+  margin-top: 2.5%;
+  height: 85vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -148,25 +138,24 @@ img {
 }
 
 #tools .newPlayer:hover {
-  padding: 2px;
+  padding: 1px;
   border: solid 1px;
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
+  -webkit-transform: scale(1.04);
+          transform: scale(1.04);
   -webkit-transition: all 0.5s ease-in-out 0.2s;
   transition: all 0.5s ease-in-out 0.2s;
   cursor: pointer;
 }
 
 #tools .reinitialise {
-  margin-top: 7%;
   border-radius: 12px;
 }
 
 #tools .reinitialise:hover {
-  padding: 2px;
+  padding: 1px;
   border: solid 1px;
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
+  -webkit-transform: scale(1.04);
+          transform: scale(1.04);
   -webkit-transition: all 0.5s ease-in-out 0.2s;
   transition: all 0.5s ease-in-out 0.2s;
   cursor: pointer;
@@ -181,15 +170,14 @@ img {
 }
 
 #tools .diceButton {
-  margin-top: 15%;
   border-radius: 12px;
 }
 
 #tools .diceButton:hover {
-  padding: 2px;
+  padding: 1px;
   border: solid 1px;
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
+  -webkit-transform: scale(1.04);
+          transform: scale(1.04);
   -webkit-transition: all 0.5s ease-in-out 0.2s;
   transition: all 0.5s ease-in-out 0.2s;
   cursor: pointer;
@@ -201,21 +189,19 @@ img {
 }
 
 #tools .hold {
-  margin-top: 140%;
   border-radius: 12px;
 }
 
 #tools .hold:hover {
-  padding: 2px;
+  padding: 1px;
   border: solid 1px;
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
+  -webkit-transform: scale(1.04);
+          transform: scale(1.04);
   -webkit-transition: all 0.5s ease-in-out 0.2s;
   transition: all 0.5s ease-in-out 0.2s;
   cursor: pointer;
 }
 
-#tools .victoryMessage {
-  font-size: 100px;
-}
+/* Pour les Laptops */
+/* Pour les Large Tablets  Horizontal */
 /*# sourceMappingURL=styles.css.map */
