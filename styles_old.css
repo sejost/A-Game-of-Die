@@ -1,0 +1,255 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap");
+body {
+  text-align: center;
+  text-shadow: -2px 3px 3px rgba(111, 111, 111, 0.55);
+  color: #ffffff;
+  font-family: 'Lato';
+  background-image: url("https://images.pexels.com/photos/3005772/pexels-photo-3005772.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  max-width: 100%;
+}
+
+.content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 30px;
+}
+
+.player-panel {
+  width: 55%;
+  margin-top: 2.5%;
+  height: 85vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-line-pack: stretch;
+      align-content: stretch;
+}
+
+.player-panel .playerTag {
+  margin-top: 15%;
+}
+
+.player-panel .countGame {
+  margin-top: 1%;
+}
+
+.player-panel .countRound {
+  margin-top: 30%;
+  border-radius: 8px 8px;
+  width: 200px;
+}
+
+#player1 {
+  background-color: rgba(17, 25, 40, 0.75);
+  border-radius: 12px;
+  border: 1px solid #505152a4;
+}
+
+#player1 .countRound {
+  background: #11112b;
+}
+
+#player1:hover {
+  -webkit-transform: scale(1.008);
+          transform: scale(1.008);
+  -webkit-transition: all 0.5s ease-in-out 0.2s;
+  transition: all 0.5s ease-in-out 0.2s;
+}
+
+#player2 {
+  display: none;
+  background-color: rgba(40, 17, 17, 0.75);
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+  border: 1px solid #505152a4;
+}
+
+#player2 .countRound {
+  background: #2b1111;
+}
+
+#player2:hover {
+  -webkit-transform: scale(1.008);
+          transform: scale(1.008);
+  -webkit-transition: all 0.5s ease-in-out 0.2s;
+  transition: all 0.5s ease-in-out 0.2s;
+}
+
+@-webkit-keyframes rotate {
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate {
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+#tools {
+  font-size: 23px;
+  z-index: 1;
+  background: transparent;
+  position: absolute;
+  margin-top: 2.5%;
+  height: 85vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-line-pack: stretch;
+      align-content: stretch;
+}
+
+#tools .newPlayer {
+  margin-top: 5%;
+  border-radius: 12px;
+}
+
+#tools .newPlayer:hover {
+  padding: 1px;
+  border: solid 1px;
+  -webkit-transform: scale(1.04);
+          transform: scale(1.04);
+  -webkit-transition: all 0.5s ease-in-out 0.2s;
+  transition: all 0.5s ease-in-out 0.2s;
+  cursor: pointer;
+}
+
+#tools .reinitialise {
+  border-radius: 12px;
+}
+
+#tools .reinitialise:hover {
+  padding: 1px;
+  border: solid 1px;
+  -webkit-transform: scale(1.04);
+          transform: scale(1.04);
+  -webkit-transition: all 0.5s ease-in-out 0.2s;
+  transition: all 0.5s ease-in-out 0.2s;
+  cursor: pointer;
+}
+
+#tools .dice {
+  margin-top: 120%;
+  background: #ffffff;
+  width: 100px;
+  height: 100px;
+  border-radius: 12px 12px;
+}
+
+#tools .diceButton {
+  margin-top: 25%;
+  border-radius: 12px;
+}
+
+#tools .diceButton:hover {
+  padding: 1px;
+  border: solid 1px;
+  -webkit-transform: scale(1.04);
+          transform: scale(1.04);
+  -webkit-transition: all 0.5s ease-in-out 0.2s;
+  transition: all 0.5s ease-in-out 0.2s;
+  cursor: pointer;
+}
+
+#tools .diceButton:hover i {
+  -webkit-animation: rotate 2s ease-in-out 0s 1 normal;
+          animation: rotate 2s ease-in-out 0s 1 normal;
+}
+
+#tools .hold {
+  margin-top: 2%;
+  border-radius: 12px;
+}
+
+#tools .hold:hover {
+  padding: 1px;
+  border: solid 1px;
+  -webkit-transform: scale(1.04);
+          transform: scale(1.04);
+  -webkit-transition: all 0.5s ease-in-out 0.2s;
+  transition: all 0.5s ease-in-out 0.2s;
+  cursor: pointer;
+}
+
+/* Ecran  taille */
+@media only screen and (max-width: 1620px) and (max-height: 1024px) {
+  .player-panel .countRound {
+    margin-top: 50%;
+  }
+  #tools .dice {
+    margin-top: 80%;
+  }
+}
+
+/* Ecran  taille */
+@media only screen and (max-width: 1390px) {
+  .player-panel .countRound {
+    margin-top: 60%;
+  }
+}
+
+/* Ecran  taille */
+@media only screen and (max-width: 1150px) {
+  .player-panel .countRound {
+    margin-top: 80%;
+  }
+}
+
+/* Ecran  taille */
+@media only screen and (max-width: 950px) {
+  .player-panel .countRound {
+    margin-top: 90%;
+  }
+}
+
+@media only screen and (max-width: 820px) {
+  .player-panel .playerTag {
+    margin-top: 30%;
+  }
+}
+
+@media only screen and (max-width: 680px) {
+  .player-panel .countRound {
+    margin-top: 100%;
+  }
+}
+
+@media only screen and (max-width: 540px) {
+  .player-panel .countRound {
+    margin-top: 120%;
+  }
+}
+/*# sourceMappingURL=styles_old.css.map */

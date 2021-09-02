@@ -50,7 +50,8 @@ $('#resetBtn').click( () => {
            $('#playerBtn').click(addPlayer)
            $('#playerBtn').css('color', 'white')
            $('#player1').css("border-top-right-radius", "12px")
-           $('#player1').css("border-bottom-right-radius", "12px")       
+           $('#player1').css("border-bottom-right-radius", "12px") 
+           $('.player-panel').css('width', '90%')      
             break
    
         case 2:
@@ -80,6 +81,7 @@ $('#resetBtn').click( () => {
     $('#playerBtn').css('color', '#ffffff00')
     $('#player1').css("border-top-right-radius", "0");
     $('#player1').css("border-bottom-right-radius", "0")
+    $('.player-panel').css('width', '44%')
     changingBackground()
 }
 

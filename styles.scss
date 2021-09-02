@@ -1,35 +1,34 @@
-// Bibliothèque de couleur 
-$col-dark: #212529 ;
-$col-darkgray:#252627 ;
+// Bibliothèque de couleur
+$col-dark: #212529;
+$col-darkgray: #252627;
 $col-gray: #434b53;
 $col-white: #ffffff;
-$col-lucid:#ffffff00;
-$col-semilucid:#505152a4;
-$col-darkBlue : rgb(17, 17, 43);
+$col-lucid: #ffffff00;
+$col-semilucid: #505152a4;
+$col-darkBlue: rgb(17, 17, 43);
 $col-blueLucid: rgba(17, 25, 40, 0.75);
-$col-darkRed : rgb(43, 17, 17);
-$col-redLucid : rgba(40, 17, 17, 0.75);
+$col-darkRed: rgb(43, 17, 17);
+$col-redLucid: rgba(40, 17, 17, 0.75);
 
-// Bibliothèque de taille font 
-$fontSize-XLarge : 100px;
-$fontSize-Large : 40px;
-$fontSize-Medium : 30px;
-$fontSize-Small : 23px;
-$fontSize-XSmall : 19px;
+// Bibliothèque de taille font
+$fontSize-XLarge: 45px;
+$fontSize-Large: 40px;
+$fontSize-Medium: 30px;
+$fontSize-Small: 23px;
+$fontSize-XSmall: 19px;
 
-// Import de font Lato 
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
-
+// Import de font Lato
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap");
 
 //Définition général d'une carte display flex avec hauteur et écart
-@mixin flexPanels{
+@mixin flexPanels {
   margin-top: 2.5%;
   height: 85vh;
   display: flex;
   flex-direction: column;
-	flex-wrap: wrap;
-	align-items: center;
-	align-content: stretch;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: stretch;
 }
 
 //Définition général d'une méthode de transition
@@ -46,49 +45,50 @@ $fontSize-XSmall : 19px;
 }
 
 //Définition général d'une méthode de changement de pointeur souris
-@mixin cursorChange{
+@mixin cursorChange {
   cursor: pointer;
 }
 
 //Corps du CSS
 body {
   text-align: center;
-  text-shadow: -2px 3px 3px rgba(111,111,111,0.55);
+  text-shadow: -2px 3px 3px rgba(111, 111, 111, 0.55);
   color: $col-white;
-  font-family: 'Lato';
-  background-image: url('https://images.pexels.com/photos/3005772/pexels-photo-3005772.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260');
+  font-family: "Lato";
+  background-image: url("https://images.pexels.com/photos/3005772/pexels-photo-3005772.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260");
   background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover; 
-    background-attachment: fixed;
-    max-width: 100%;
-  }
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  max-width: 100%;
+  max-height: 100%;
+}
 
 //Contenu parent
-.content{
+.content {
   display: flex;
   justify-content: center;
-  align-items : center;
-  font-size: $fontSize-Medium;
+  align-items: center;
 }
 
 //Div concernant l'affichage des compteurs joueurs
-.player-panel{
-  width: 40%;
+.player-panel {
+  font-size: $fontSize-Small;
+  width: 90%;
   @include flexPanels();
-  padding-top: 50px;
 
-    .playerTag{
-      margin-top: 10%;
-    }
-    .countGame{
-      margin-top: 3%;
-    }
-    .countRound{
-      margin-top: 40%;
-      border-radius: 8px 8px;
-      width: 200px;
-    }
+  .playerTag {
+    margin-top: 25%;
+  }
+  .countGame {
+    margin-top: 1%;
+  }
+  .countRound {
+    margin-top: 90%;
+    border-radius: 8px 8px;
+    width: 120px;
+    height: 120px;
+  }
 }
 
 //Div spécifique à  l'affichage du contenu de joueur 1
@@ -96,98 +96,428 @@ body {
   background-color: $col-blueLucid;
   border-radius: 12px;
   border: 1px solid $col-semilucid;
-  
-    .countRound{
-      background: $col-darkBlue;
-    }
+
+  .countRound {
+    background: $col-darkBlue;
+  }
 }
 
 //Hover joueur 1
-#player1:hover{
+#player1:hover {
   transform: scale(1.008);
   @include transition1();
 }
-  
+
 //Div spécifique à  l'affichage du contenu de joueur 2
-#player2{
+#player2 {
   display: none;
   background-color: $col-redLucid;
   border-top-right-radius: 12px;
   border-bottom-right-radius: 12px;
   border: 1px solid $col-semilucid;
 
-    .countRound{
-      background: $col-darkRed;
-    }
+  .countRound {
+    background: $col-darkRed;
+  }
 }
 
 //Hover joueur 2
-#player2:hover{
+#player2:hover {
   transform: scale(1.008);
   @include transition1();
 }
 
 //Définition d'une animation de rotation
 @keyframes rotate {
-  100%{ transform: rotate(360deg); }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 //Div spécifique à l'affichage du menu d'outils
-#tools{
+#tools {
   font-size: $fontSize-Small;
-  z-index:1;
+  z-index: 1;
   background: transparent;
   position: absolute;
   @include flexPanels();
 
-    .newPlayer{
-      border-radius: 12px;
+  .newPlayer {
+    margin-top: 5%;
+    border-radius: 12px;
+  }
+  .newPlayer:hover {
+    @include transformEffect();
+    @include cursorChange();
+  }
+  .reinitialise {
+    border-radius: 12px;
+  }
+  .reinitialise:hover {
+    @include transformEffect();
+    @include cursorChange();
+  }
+  .dice {
+    margin-top: 65%;
+    background: $col-white;
+    width: 100px;
+    height: 100px;
+    border-radius: 12px 12px;
+    #myCanvas {
+      width: 300%;
     }
-    .newPlayer:hover{
-      @include transformEffect();
-      @include cursorChange();
+  }
+  .diceButton {
+    margin-top: 5%;
+    border-radius: 12px;
+  }
+  .diceButton:hover {
+    @include transformEffect();
+    @include cursorChange();
+    i {
+      animation: rotate 2s ease-in-out 0s 1 normal;
     }
-    .reinitialise{
-      border-radius: 12px;
+  }
+  .hold {
+    margin-top: 2%;
+    border-radius: 12px;
+  }
+  .hold:hover {
+    @include transformEffect();
+    @include cursorChange();
+  }
+}
+
+/* Ecran  Mobile Horizontal Small*/
+@media only screen and (min-width: 600px) and (min-height: 300px) {
+  .player-panel {
+    font-size: $fontSize-XSmall;
+    .playerTag {
+      margin-top: 10%;
     }
-    .reinitialise:hover{
-      @include transformEffect();
-      @include cursorChange();
-      
+    .countGame {
+      margin-top: 0%;
     }
-    .dice{
-      margin-top : 90%;
-      background: $col-white;
+    .countRound {
+      margin-top: 20%;
+      width: 80px;     
+      height: 80px;   
+    }
+  }
+
+  #tools {
+    font-size: $fontSize-XSmall;
+    .newPlayer {
+      margin-top: 0%;
+    }
+    .dice {
+      margin-top: 40%;
+      width: 60px;
+      height: 60px;
+    }
+    .diceButton {
+      margin-top: 0%;
+    }
+    .hold {
+      margin-top: 0%;
+    }
+  }
+}
+
+/* Ecran  Mobile Vertical Medium*/
+@media only screen and (min-width: 400px) and (min-height: 850px) {
+  .player-panel {
+    font-size: $fontSize-Medium;
+    .playerTag {
+      margin-top: 30%;
+    }
+    .countGame {
+      margin-top: 5%;
+    }
+    .countRound {
+      margin-top: 90%;
+      width: 150px;     
+      height: 150px;   
+    }
+  }
+
+  #tools {
+    font-size: $fontSize-Medium;
+    .newPlayer {
+      margin-top: 0%;
+    }
+    .dice {
+      margin-top: 80%;
       width: 100px;
       height: 100px;
-      border-radius: 12px 12px;
     }
-    .diceButton{
-      border-radius: 12px;
+    .diceButton {
+      margin-top: 0%;
     }
-    .diceButton:hover{
-      @include transformEffect();
-      @include cursorChange();
-      i{
-      animation:rotate 2s ease-in-out 0s 1 normal;
-      }
+    .hold {
+      margin-top: 0%;
+    }
   }
-    .hold{
-      border-radius: 12px;
-    }
-    .hold:hover{
-      @include transformEffect();
-      @include cursorChange();
-    }
-
 }
 
-  /* Pour les Laptops */
-@media only screen and (max-width: 1622px) and (max-height : 1025px) {
+/* Ecran  Mobile Horizontal Medium*/
+@media only screen and (min-width: 850px) and (min-height: 400px) {
+  .player-panel {
+    font-size: $fontSize-Small;
+    .playerTag {
+      margin-top: 6%;
+    }
+    .countGame {
+      margin-top: 0%;
+    }
+    .countRound {
+      margin-top:15%;
+      width: 120px;     
+      height: 110px;   
+    }
+  }
 
+  #tools {
+    font-size: $fontSize-XSmall;
+    .newPlayer {
+      margin-top: 0%;
+    }
+    .dice {
+      margin-top: 45%;
+      width: 60px;
+      height: 60px;
+    }
+    .diceButton {
+      margin-top: 0%;
+    }
+    .hold {
+      margin-top: 0%;
+    }
+  }
 }
 
-/* Pour les Large Tablets  Horizontal */
-@media only screen and (max-width: 1400px) and (max-height : 1025px) {
+/* Ecran  Tabs Vertical Small*/
+@media only screen and (min-width: 750px) and (min-height: 1200px) {
+  .player-panel {
+    font-size: $fontSize-Large;
+    .playerTag {
+      margin-top: 15%;
+    }
+    .countGame {
+      margin-top: 0%;
+    }
+    .countRound {
+      margin-top:80%;
+      width: 200px;     
+      height: 200px;   
+    }
+  }
 
+  #tools {
+    font-size: $fontSize-Medium;
+    .newPlayer {
+      margin-top: 0%;
+    }
+    .dice {
+      margin-top: 100%;
+      width: 150px;
+      height: 150px;
+    }
+    .diceButton {
+      margin-top: 5%;
+    }
+    .hold {
+      margin-top: 5%;
+    }
+  }
+}
+
+/* Ecran  Tabs Horizontal Large*/
+@media only screen and (min-width: 1000px) and (min-height: 750px) {
+  .player-panel {
+    font-size: $fontSize-Medium;
+    .playerTag {
+      margin-top: 10%;
+    }
+    .countGame {
+      margin-top: 0%;
+    }
+    .countRound {
+      margin-top:35%;
+      width: 150px;     
+      height: 150px;   
+    }
+  }
+
+  #tools {
+    font-size: $fontSize-Small;
+    .newPlayer {
+      //margin-top: 5%;
+      margin-top: 0%;
+    }
+    .dice {
+      //margin-top : 65%; //Original Size
+      //width: 100px;     //Original Size
+      //height: 100px;    //Original Size
+      margin-top: 80%;
+      width: 120px;
+      height: 120px;
+    }
+    .diceButton {
+      //margin-top: 5%;   //Original Size
+      margin-top: 5%;
+    }
+    .hold {
+      //margin-top: 2%;   //Original Size
+      margin-top: 5%;
+    }
+  }
+}
+
+/* Ecran  Tabs Vertical Large*/
+@media only screen and (min-width: 750px) and (min-height: 1000px) {
+  .player-panel {
+    font-size: $fontSize-Large;
+    .playerTag {
+      margin-top: 20%;
+    }
+    .countGame {
+      margin-top: 0%;
+    }
+    .countRound {
+      margin-top: 50%;
+      width: 200px;     
+      height: 200px;   
+    }
+  }
+
+  #tools {
+    font-size: $fontSize-Medium;
+    .newPlayer {
+      //margin-top: 5%;
+      margin-top: 0%;
+    }
+    .dice {
+      margin-top: 80%;
+      width: 120px;
+      height: 120px;
+    }
+    .diceButton {
+      margin-top: 5%;
+    }
+    .hold {
+      margin-top: 5%;
+    }
+  }
+}
+
+
+/* Ecran  Desktop Small*/
+@media only screen and (min-width: 1300px) and (min-height: 750px) {
+  .player-panel {
+    font-size: $fontSize-Medium;
+    .playerTag {
+      margin-top: 10%;
+    }
+    .countGame {
+      margin-top: 0%;
+    }
+    .countRound {
+      margin-top:23%;
+      width: 150px;     
+      height: 150px;   
+    }
+  }
+
+  #tools {
+    font-size: $fontSize-Medium;
+    .newPlayer {
+      //margin-top: 5%;
+      margin-top: 0%;
+    }
+    .dice {
+      margin-top: 60%;
+      width: 120px;
+      height: 120px;
+    }
+    .diceButton {
+      margin-top: 5%;
+    }
+    .hold {
+      margin-top: 5%;
+    }
+  }
+}
+
+/* Ecran  Desktop Medium*/
+@media only screen and (min-width: 1500px) and (min-height: 900px) {
+  .player-panel {
+    font-size: $fontSize-Large;
+    .playerTag {
+      margin-top: 10%;
+    }
+    .countGame {
+      margin-top: 0%;
+    }
+    .countRound {
+      margin-top:30%;
+      width: 200px;     
+      height: 200px;   
+    }
+  }
+
+  #tools {
+    font-size: $fontSize-Large;
+    .newPlayer {
+      //margin-top: 5%;
+      margin-top: 0%;
+    }
+    .dice {
+      margin-top: 60%;
+      width: 150px;
+      height: 150px;
+    }
+    .diceButton {
+      margin-top: 5%;
+    }
+    .hold {
+      margin-top: 5%;
+    }
+  }
+}
+
+/* Ecran  Desktop Large*/
+@media only screen and (min-width: 1600px) and (min-height: 900px) {
+  .player-panel {
+    font-size: $fontSize-Large;
+    .playerTag {
+      margin-top: 8%;
+    }
+    .countGame {
+      margin-top: 0%;
+    }
+    .countRound {
+      margin-top:19%;
+      width: 220px;     
+      height: 220px;   
+    }
+  }
+
+  #tools {
+    font-size: $fontSize-Large;
+    .newPlayer {
+      margin-top: 0%;
+    }
+    .dice {
+      margin-top: 50%;
+      width: 150px;
+      height: 150px;
+    }
+    .diceButton {
+      margin-top: 5%;
+    }
+    .hold {
+      margin-top: 5%;
+    }
+  }
 }
