@@ -1,3 +1,10 @@
+<!-- 
+    Page Index.html du jeu Game of Die, 
+    réalisé par Sébastien Jost dans le 
+    cadre de son évaluation "Dynamiser 
+    vos site Web avec Javascript".
+-->
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -20,11 +27,13 @@
 
         <!-- Panneau du joueur 1 / Par défaut -->
         <div class="player-panel" id='player1'>
+                <!-- Indicatif du joueur 1 -->
             <div class="playerTag"> PLAYER 1 <span style="display: none;" id='player1Turn'></span>
             </div>
 
+                <!-- Indicatif du compte du jeu 1 -->
             <div class="countGame" id='cntGame1'></div>
-
+                <!-- Indicatif du compte de tour 1 -->
             <div class="countRound">
                 <p>CURRENT</p>
                 <p id='cntRound1'></p>
@@ -36,22 +45,27 @@
         
         <!-- Panneau des outils, imbriquer au milieu -->
         <div id="tools">
-            <!-- <div class="victoryMessage"></div> -->
+            <!-- <div class="victoryMessage"></div> (en cours)-->
+            <!-- Bouton d'ajout de joueur 2-->
             <div class="newPlayer" id="playerBtn">
                 <i class="fas fa-user-plus"></i> <span>ADD PLAYER 2</span>
             </div>
+            <!-- Bouton de réinitialisation-->
             <div class="reinitialise" id='resetBtn'>
                 <i  class="fas fa-play-circle"></i> <span>NEW GAME</span>
             </div>
+            <!-- Emplacement du dé -->
             <div class="dice">
                 <canvas id="myCanvas"> </canvas>
                 <p><span style="display: none;" id='diceResult'></span></p>
             </div>
 
+            <!-- Bouton de lancement de dés-->
             <div class="diceButton" id="diceBtn">
                 <i width="200px"  class="fas fa-dice"></i> <span>ROLL</span>
             </div>
 
+            <!-- Bouton de retenu de score-->
             <div class="hold" id="holdBtn">
                 <i class="fas fa-arrow-circle-down" ></i> <span>HOLD</span>
             </div>  
@@ -59,12 +73,15 @@
 
         <br>
         
+        <!-- Panneau du joueur 1 / Apparait après ajout donc Display none -->
         <div class="player-panel" id='player2'>
             <div class="playerTag"> PLAYER 2 <span style="display: none;" id='player2Turn'></span>
             </div>
 
+            <!-- Indicatif du compte du jeu 2 -->
             <div class="countGame" id='cntGame2'>0</div>
 
+            <!-- Indicatif du compte de tour 2 -->
             <div class="countRound">
                 <p>CURRENT</p>
                 <p id='cntRound2'>0</p>
@@ -74,6 +91,7 @@
 
     </div>
     
+<!-- Ajout du script en fin de code -->
 <script src="script.js"></script>
 
 </body>
